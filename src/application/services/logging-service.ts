@@ -101,23 +101,7 @@ class LoggingService implements Logger {
             const timestamp = new Date().toISOString();
             const formattedMsg = `${timestamp} ${this.prefix} [${level.toUpperCase()}] ${message}`;
 
-            switch (level) {
-                case 'debug':
-                    console.debug(formattedMsg, ...args);
-                    break;
-                case 'info':
-                    console.info(formattedMsg, ...args);
-                    break;
-                case 'log':
-                    console.log(formattedMsg, ...args);
-                    break;
-                case 'warn':
-                    console.warn(formattedMsg, ...args);
-                    break;
-                case 'error':
-                    console.error(formattedMsg, ...args);
-                    break;
-            }
+            console.error(formattedMsg, ...args);
         }
     }
 }

@@ -8,20 +8,16 @@ import { ToolNames } from './domain/constants.js';
  * Main function to start the ThinkGate-MCP server
  */
 async function runServer() {
-    logService.log("Starting ThinkGate-MCP server...");
-
     await mcpServer.start()
 
     // Output information about the server status
-    printStatus();
-
-    logService.log("ThinkGate-MCP server is running");
+    init();
 }
 
 /**
  * Print status of available tools and LLM configurations
  */
-function printStatus() {
+function init() {
     // Check architect tool
     const architectClient = LLMClientFactory.getClient(ToolNames.architect);
     const architectStatus = architectClient.isInitialized()
