@@ -11,16 +11,6 @@ A Model Context Protocol (MCP) server that provides AI-powered thinking, code ar
 
 ## Installation
 
-### Using NPM
-
-```bash
-# Install globally
-npm install -g ai-think-gate
-
-# Run the server
-ai-think-gate
-```
-
 ### Using Docker
 
 ```bash
@@ -28,7 +18,7 @@ ai-think-gate
 docker build -t ai-think-gate .
 
 # Run container
-docker run -p 3000:3000 ai-think-gate
+docker run -p 3000:3000 ai-think-gate-mcp
 ```
 
 ## Configuration
@@ -90,7 +80,27 @@ LOG_LEVEL=debug
 
 ### Claude Desktop
 
-Using different models for each tool:
+Basic installation:
+
+```json
+{
+  "mcpServers": {
+    "ai_think_gate": {
+      "command": "npx",
+      "args": [
+        "@trishchuk/ai-think-gate-mcp"
+      ],
+      "env": {
+        "LLM_OPENAI_API_KEY": "your_api_key",
+        "LLM_OPENAI_API_MODEL": "gemini-2.5-pro-exp-03-25",
+        "LLM_OPENAI_API_ENDPOINT": "https://generativelanguage.googleapis.com/v1beta/openai"
+      }
+    }
+  }
+}
+```
+
+Using different models for each tool and from locally built files:
 
 ```json
 {
@@ -129,7 +139,7 @@ With Ollama integration:
   "mcpServers": {
     "ai_think_gate": {
       "command": "npx",
-      "args": ["ai-think-gate"],
+      "args": ["@trishchuk/ai-think-gate-mcp"],
       "env": {
         "LOG_LEVEL": "debug",
         "LLM_OPENAI_API_KEY": "ollama",
@@ -190,8 +200,8 @@ Parameters:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ai-think-gate.git
-cd ai-think-gate
+git clone https://github.com/x51xxx/ai-think-gate-mcp.git
+cd ai-think-gate-mcp
 
 # Install dependencies
 npm install

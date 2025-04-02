@@ -1,5 +1,5 @@
 {
-  "name": "ai-think-gate",
+  "name": "@trishchuk/ai-think-gate-mcp",
   "version": "0.1.0",
   "description": "Model Context Protocol (MCP) server that provides AI-powered thinking and code architecture tools",
   "author": {
@@ -12,7 +12,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "ai-think-gate": "dist/index.js"
+    "ai-think-gate-mcp": "dist/index.js"
   },
   "files": [
     "dist"
@@ -24,7 +24,7 @@
     "start": "node dist/index.js",
     "dev": "tsc && node dist/index.js",
     "lint": "eslint src/**/*.ts",
-    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
+    "test": "npx jest"
   },
   "keywords": [
     "ai",
