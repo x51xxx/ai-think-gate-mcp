@@ -15,7 +15,7 @@ A Model Context Protocol (MCP) server that provides AI-powered thinking, code ar
 
 ```bash
 # Build Docker image
-docker build -t ai-think-gate .
+docker build -t ai-think-gate-mcp .
 
 # Run container
 docker run -p 3000:3000 ai-think-gate-mcp
@@ -88,6 +88,7 @@ Basic installation:
     "ai_think_gate": {
       "command": "npx",
       "args": [
+        "-y",
         "@trishchuk/ai-think-gate-mcp"
       ],
       "env": {
@@ -139,7 +140,10 @@ With Ollama integration:
   "mcpServers": {
     "ai_think_gate": {
       "command": "npx",
-      "args": ["@trishchuk/ai-think-gate-mcp"],
+      "args": [
+        "-y",
+        "@trishchuk/ai-think-gate-mcp"
+      ],
       "env": {
         "LOG_LEVEL": "debug",
         "LLM_OPENAI_API_KEY": "ollama",
