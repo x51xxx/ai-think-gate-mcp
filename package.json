@@ -1,6 +1,6 @@
 {
   "name": "@trishchuk/ai-think-gate-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Model Context Protocol (MCP) server that provides AI-powered thinking and code architecture tools",
   "author": {
     "name": "Taras Trishchuk",
